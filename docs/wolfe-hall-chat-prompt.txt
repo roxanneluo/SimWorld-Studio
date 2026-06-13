@@ -1,0 +1,20 @@
+Build the Wolfe Hall West Wall world using the wolfe_hall_skill. Follow all phases in order:
+
+Phase 0: delete_all_spawned(), setup_environment(), set golden-hour sun (low angle, warm orange ambient, light haze via ExponentialHeightFog fog_density=0.03).
+
+Phase 1 – Town buildings on a main street (X axis, 3000cm wide road at Y=0):
+  North side (Y=+1500, yaw=180): Saloon=BP_Building_03 at [0,1500,0], GeneralStore=BP_Building_08 at [3500,1500,0], SheriffOffice=BP_Building_12 at [7000,1500,0]
+  South side (Y=-1500, yaw=0): Barn=BP_Building_22 at [1800,-1500,0], BoardingHouse=BP_Building_31 at [5000,-1500,0], Stables=BP_Building_18 at [8200,-1500,0]
+  Take screenshot.
+
+Phase 2 – Street props: 2 barrels (BP_Box) and a bench (BP_Bench) in front of saloon, 3 hitching posts (BP_RoadBlocker scaled 0.15×0.15×1.8) along north sidewalk, scattered crates/cans near other buildings. Water tower: tall cylinder (scale 1.5,1.5,6) + wider cylinder on top (scale 3,3,2) at [10000,0,0]. Take screenshot.
+
+Phase 3 – Railroad: list_assets("/Game/TrainStation/") to find track mesh, lay 18 segments along Y=-4500 spanning X=-1000 to X=16000. Add a station platform (box scaled 30,8,1.5) at [2000,-4200,50]. If no track mesh found, fake rails with thin boxes (scale 10,0.3,0.3) for left and right rails. Take screenshot.
+
+Phase 4 – Lake: large Plane mesh at [-8000,0,-80] scaled 50×40, try to apply a water material. Two dock planks (boxes scaled 18,2.5,0.4) extending east from X=-5500. Surround with 10 trees (BP_Tree3 and BP_Tree5 alternating) in a loose circle around the lake. Take screenshot.
+
+Phase 5 – Red rock mesas: list_assets("/Game/MiddleEast/") and list_assets("/Game/ModularSciFi/") to find rock/cliff static meshes. Spawn 7 formations in an arc north of town (Y > 10000, Z = 1500-3000), scaled 8-16× in XY and 10-20× in Z to create mesa silhouettes. Apply reddish sandstone material if found. If no rock mesh exists use Cube as fallback. Take screenshot.
+
+Phase 6 – Scrubland: 6 small trees (BP_Tree1, BP_Tree2, BP_Tree4, BP_Tree6) scaled 0.4-0.7× scattered between town and mesas (Y = 5000-8000, varied X).
+
+Phase 7 – Final: take_screenshot() from a cinematic angle showing full world (camera ~[15000,-8000,4000] looking NW), then check_collisions() and fix any overlaps. Take one final screenshot.
