@@ -87,7 +87,8 @@ server/
 **API base:** `/api`  
 **SSE stream:** `GET /api/events`  
 **Chat stream:** `POST /api/chat` (SSE response)  
-**Port:** 9001 (configurable via `PORT` env)
+**Port:** 3002 (configurable via `PORT` env — see `web/server/index.js:1`; the Vite
+dev server proxies `/api` there)
 
 ---
 

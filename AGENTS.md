@@ -3,6 +3,10 @@
 > This file is read by Codex, Claude Code, and all AI coding agents before doing any work.
 > Keep it up to date. It is the single source of truth for how to build this project.
 
+**New to the codebase?** Read the [Developer Wiki](docs/wiki/README.md) first — it maps
+the repo, documents the house style, and explains the agent system in depth
+(the word "agent" means four different things here).
+
 ---
 
 ## Product

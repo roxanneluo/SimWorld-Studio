@@ -55,6 +55,8 @@ Runs as a subprocess spawned by Claude Code (via `--mcp-config mcp.json`). Imple
 
 ### `agent-controller.js` — Agent Session Manager
 
+> Deep dive: [Developer Wiki — Agents](../../../docs/wiki/02-agents.md#2-kind-2--the-panel-agent-agentsession)
+
 Manages per-agent state across the lifetime of the server:
 
 ```
